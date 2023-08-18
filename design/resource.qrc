@@ -1,0 +1,54 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>Project-Parot-assets/Create-acc-assets/Line 1.png</file>
+    <file>Project-Parot-assets/Artboard 1.png</file>
+    <file>Project-Parot-assets/Login.png</file>
+    <file>Project-Parot-assets/login-background.png</file>
+    <file>Project-Parot-assets/login-main-backgroun.png</file>
+    <file>Project-Parot-assets/login-page.ai</file>
+    <file>Project-Parot-assets/Main-backgroumd.png</file>
+    <file>Project-Parot-assets/Outline.png</file>
+    <file>Project-Parot-assets/Password-border.png</file>
+    <file>Project-Parot-assets/userneme-border.png</file>
+    <file>Project-Parot-assets/Vector Smart Object.png</file>
+    <file>Project-Parot-assets/Vector Smart Object-1.png</file>
+    <file>Project-Parot-assets/Vector Smart Object-2.png</file>
+    <file>Project-Parot-assets/Vector Smart Object-3.png</file>
+  </qresource>
+  <qresource prefix="forgotpass">
+    <file>Project-Parot-assets/forgot-pass-assets/send_button.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/Asset 2.png</file>
+  </qresource>
+  <qresource prefix="createAcc">
+    <file>Project-Parot-assets/Create-acc-assets/cancel button.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/Line 1.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0000_Parrot.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0000s_0000__Group_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0001__Group_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0001s_0000__Group_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0002__Group_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0002s_0000__Image_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0003__Group_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0003s_0000__Path_.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0003s_0001_Vector-Smart-Object.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0004_Reenter-Your-Password..png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0005_Create-Password..png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0006_Create-User-Name..png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0007_Enter-Your-Valid-Email-ID..png</file>
+    <file>Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0008_Lines.png</file>
+    <file>Project-Parot-assets/Create-acc-assets/show_pass_icon.png</file>
+  </qresource>
+  <qresource prefix="startui">
+    <file>Project-Parot-assets/start-window-assets/Listening_.png</file>
+    <file>Project-Parot-assets/start-window-assets/Recognising_.png</file>
+    <file>Project-Parot-assets/start-window-assets/Listening.....gif</file>
+    <file>Project-Parot-assets/start-window-assets/Listening....gif</file>
+    <file>Project-Parot-assets/start-window-assets/Recognising.....gif</file>
+    <file>Project-Parot-assets/start-window-assets/new-start-window_0000_Group-1-copy.png</file>
+    <file>Project-Parot-assets/start-window-assets/new-start-window_0001_Group-1.png</file>
+    <file>Project-Parot-assets/start-window-assets/new-start-window_0002_Parrot.png</file>
+    <file>Project-Parot-assets/start-window-assets/new-start-window_0003_05-_-05-_-20-pm.png</file>
+    <file>Project-Parot-assets/start-window-assets/new-start-window_0004_background.png</file>
+  </qresource>
+</RCC>

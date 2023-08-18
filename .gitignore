@@ -1,0 +1,7 @@
+
+*.pyc
+Windows/__pycache__/
+ParrotEnv/
+lib/load.json
+Windows/resource_rc.py
+

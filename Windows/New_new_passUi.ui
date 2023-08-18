@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>new_pass</class>
+ <widget class="QWidget" name="new_pass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>799</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="main_background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0003s_0001_Vector-Smart-Object.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="create_acc_background">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>194</y>
+     <width>505</width>
+     <height>412</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0003s_0000__Path_.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Parrot">
+   <property name="geometry">
+    <rect>
+     <x>645</x>
+     <y>260</y>
+     <width>169</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0000_Parrot.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="email_text">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>323</y>
+     <width>235</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Hurme Geometric Sans 1</family>
+     <pointsize>14</pointsize>
+     <weight>0</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/Line 1.png);
+color: rgb(255, 255, 255);
+font: 0 14pt &quot;Hurme Geometric Sans 1&quot;;</string>
+   </property>
+   <property name="maxLength">
+    <number>32767</number>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>Enter your Email id.</string>
+   </property>
+   <property name="cursorMoveStyle">
+    <enum>Qt::VisualMoveStyle</enum>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="error_lable">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>460</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>OCR-B 10 BT</family>
+     <pointsize>9</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(250, 85, 85);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="text">
+    <string>Erro.</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel_button">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>190</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/cancel button.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>609</x>
+     <y>348</y>
+     <width>247</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/forgotpass/Project-Parot-assets/Create-acc-assets/Asset 2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="submit_button">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>430</y>
+     <width>321</width>
+     <height>197</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0002s_0000__Image_.png);
+color: rgb(255, 255, 255);
+font: 18pt &quot;Tourner&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Submit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>609</x>
+     <y>460</y>
+     <width>247</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/forgotpass/Project-Parot-assets/Create-acc-assets/Asset 2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="conferm_new_password">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>437</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Hurme Geometric Sans 1</family>
+     <pointsize>14</pointsize>
+     <weight>0</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/Line 1.png);
+color: rgb(255, 255, 255);
+font: 0 14pt &quot;Hurme Geometric Sans 1&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="maxLength">
+    <number>32767</number>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>Confirm password.</string>
+   </property>
+   <property name="cursorMoveStyle">
+    <enum>Qt::VisualMoveStyle</enum>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="new_password">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>376</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Hurme Geometric Sans 1</family>
+     <pointsize>14</pointsize>
+     <weight>0</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/Line 1.png);
+color: rgb(255, 255, 255);
+font: 0 14pt &quot;Hurme Geometric Sans 1&quot;;</string>
+   </property>
+   <property name="maxLength">
+    <number>32767</number>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>New password.</string>
+   </property>
+   <property name="cursorMoveStyle">
+    <enum>Qt::VisualMoveStyle</enum>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>609</x>
+     <y>406</y>
+     <width>247</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/forgotpass/Project-Parot-assets/Create-acc-assets/Asset 2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="hide_button">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>375</y>
+     <width>34</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/show_pass_icon.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="show_pass_button">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>375</y>
+     <width>34</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/show_pass_icon.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>828</x>
+     <y>388</y>
+     <width>16</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0000s_0000__Group_.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="show_pass_button_2">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>430</y>
+     <width>34</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/show_pass_icon.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>828</x>
+     <y>443</y>
+     <width>16</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/create_account_ui_0000s_0000s_0000__Group_.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="hide_button_2">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>430</y>
+     <width>34</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/createAcc/Project-Parot-assets/Create-acc-assets/show_pass_icon.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>main_background</zorder>
+  <zorder>create_acc_background</zorder>
+  <zorder>Parrot</zorder>
+  <zorder>email_text</zorder>
+  <zorder>cancel_button</zorder>
+  <zorder>label</zorder>
+  <zorder>submit_button</zorder>
+  <zorder>error_lable</zorder>
+  <zorder>label_2</zorder>
+  <zorder>conferm_new_password</zorder>
+  <zorder>new_password</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>hide_button</zorder>
+  <zorder>hide_button_2</zorder>
+  <zorder>show_pass_button</zorder>
+  <zorder>show_pass_button_2</zorder>
+ </widget>
+ <resources>
+  <include location="../design/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
