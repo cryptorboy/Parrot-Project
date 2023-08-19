@@ -71,7 +71,7 @@ class Ui_login_Form(object):
         self.Password_text = QtWidgets.QLineEdit(login_Form)
         self.Password_text.setGeometry(QtCore.QRect(497, 264, 288, 30))
         self.Password_text.setStyleSheet("border-image: url(E:/Project-Parot/design/Project-Parot-assets/Password-border.png);\n"
-"font: 13pt \"Cascadia Code ExtraLight\";\n"
+"font: 13pt \"Cascadia Mono ExtraLight\";\n"
 "color: rgb(255, 255, 255);")
         self.Password_text.setEchoMode(QtWidgets.QLineEdit.Password)
         self.Password_text.setCursorPosition(0)

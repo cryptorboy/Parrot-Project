@@ -178,15 +178,17 @@ class Mainexecution(QThread):
                     self.num = Number()
                     if not self.num:
                         speak("Repeate that again.")
-                    else:  
-                        self.num = self.num[0]
-                        speak("What message do you want to send?")
-                        self.msg = takeCommand().lower()
-                        if "none" != self.msg:
-                            whatsapp(self.num, self.msg)
-                            break
-                        else:
-                             speak("Say that again.")
+                    else:
+                        while True: 
+                            self.num = self.num[0]
+                            speak("What message do you want to send?")
+                            self.msg = takeCommand().lower()
+                            if "none" != self.msg:
+                                whatsapp(self.num, self.msg)
+                                break
+                            else:
+                                speak("Say that again.")
+                        break
 
 #------------------------------------------open any application------------>>>
             elif "open" in self.query:
