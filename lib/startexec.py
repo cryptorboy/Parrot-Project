@@ -11,6 +11,9 @@ import re
 import speech_recognition as sr
 from googletrans import Translator
 import wikipedia
+import keyboard as key
+
+
 
 
 
@@ -19,6 +22,8 @@ from body import Speak
 from lib.WhasApp import whatsapp
 from Windows.New_Start_ui import Ui_Start_ui
 from body.Listen import takeCommand
+from lib.Openbrow import open_url,search,search_engines,popular_websites
+from lib.Map import MyLocation
 
 
 
@@ -109,6 +114,7 @@ def Openanyapplication(Application):
         pyautogui.press('win')
         time.sleep(1)
         pyautogui.write(Application)
+        time.sleep(2)
         pyautogui.press('enter')
 
 
@@ -145,25 +151,21 @@ class Mainexecution(QThread):
             print(self.query)
 
             #this function handles all commands
-            self.taskexecuter(self.query)
-            if "close" in self.query:
-                speak("Ok! You can call me whenever you want. Thank You.")
-                ui.closelabel()
-                break
+            self.taskexecuter(self.query)      
 
-         
     def taskexecuter(self,query):
-               
+                
 #---------------------------------------------opening browser----------------->>>
-            if "open google" in self.query:
+            if "open" in self.query:
+                    website = query.replace("open", "").strip().lower()
+                    try:
+                        open_url(popular_websites[website])
+                        speak(f"Opening {website}") 
+                    except:
+                        speak(f"Opening {website}")
+                        Openanyapplication(website)
 
-                 self.search = self.query.replace("google search", "") 
-          
-                 try:
-                    import pywhatkit
-                    pywhatkit.search(self.search)
-                 except Exception as e:
-                      print(e)
+
 
 #------------------------------------------Send whatsapp message----------->>>
             elif "whatsapp" in self.query:
@@ -190,20 +192,13 @@ class Mainexecution(QThread):
                                 speak("Say that again.")
                         break
 
-#------------------------------------------open any application------------>>>
-            elif "open" in self.query:
-                    
-                    self.query=self.query.replace("please","")
-                    self.query=self.query.replace("can you","")
-                    self.query=self.query.replace("none","")
-                    if "open" != self.query:
-                        self.query=self.query.replace("open","")
-                        speak(f"Opening {self.query}")
-                        Openanyapplication(self.query)
+            elif "location" in self.query:
+                 speak("Checking your location")
+                 state ,country = MyLocation()
+                 speak(f"you are in {state},{country} now.")
 
-#--------------------------------------------Automate Chrome---------------->>>
-            elif "chrome" in self.query:
-                 pass 
+            elif "close window" in self.query:
+                 key.press_and_release("Alt+F4")
 
 
 
