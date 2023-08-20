@@ -21,9 +21,8 @@ from Windows.iputy import Ui_Form
 from body import Speak
 from lib.WhasApp import whatsapp
 from Windows.New_Start_ui import Ui_Start_ui
-from body.Listen import takeCommand
 from lib.Openbrow import open_url,search,search_engines,popular_websites
-from lib.Map import MyLocation
+from lib.Map import MyLocation,GoogleMap
 
 
 
@@ -192,12 +191,30 @@ class Mainexecution(QThread):
                                 speak("Say that again.")
                         break
 
+#--------------------------------------------Show Location-------------->>>>
             elif "location" in self.query:
                  speak("Checking your location")
                  state ,country = MyLocation()
                  speak(f"you are in {state},{country} now.")
 
+#------------------------------------------------search Place----------->>>>
+            elif "where is" in self.query:
+                 try:
+                    self.place = self.query.replace("where is","")
+                    self.place = self.place.replace("is", "")
+                    self.place = self.place.replace("tell", "")
+                    self.place = self.place.replace("me", "")
+                    self.place = self.place.replace("parrot", "")
+
+
+                    print(self.place)
+                    asnwer = GoogleMap(self.place)
+                    speak(f"{self.place} is {asnwer} kilometers away from your location.")
+                 except:
+                      speak("say that again.")
+
             elif "close window" in self.query:
+                 speak("closing recently opened window")
                  key.press_and_release("Alt+F4")
 
 
@@ -329,4 +346,6 @@ class  Run_Class:
         
 if __name__ == "__main__":
     r =Run_Class()
+
+
 
