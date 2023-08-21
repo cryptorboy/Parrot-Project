@@ -27,6 +27,7 @@ from lib.Map import MyLocation,GoogleMap
 from lib.Mail import mail
 
 
+
 s = Speak.OnlineVoice()
 def speak(text):
      s.chmspeak(text)
@@ -249,7 +250,6 @@ class MainexecutionWindow(QMainWindow):
          
     def take_mail_info(self):
         pass
-
     def StartFrom(self):
         self.startFrom = QtWidgets.QWidget()
         self.startui = Ui_Start_ui()
