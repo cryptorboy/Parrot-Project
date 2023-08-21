@@ -217,11 +217,15 @@ class Mainexecution(QThread):
 
 # ----------------------------------------------------------send mail---------------->>>>>
             elif "send mail" in self.query:
-                    send_email = mail('joananna9886@gmail.com', 'hhhhh','kkkkkk')
-                    debug = send_email.send()
-                    if debug == True:
-                         ui.take_mail_info()
-                         web.open('https://support.google.com/accounts/answer/185833?sjid=13241575861064544952-AP')
+                    while True:
+                        try:
+                            send_email = mail('joananna9886@gmail.com', 'hhhhh','kkkkkk')
+                            debug = send_email.send()
+                        except Exception as e:
+                            print(e)
+                        if debug == True:
+                            ui.take_mail_info()
+                            web.open('https://support.google.com/accounts/answer/185833?sjid=13241575861064544952-AP')
                          
             elif "close window" in self.query:
                  speak("closing recently opened window")

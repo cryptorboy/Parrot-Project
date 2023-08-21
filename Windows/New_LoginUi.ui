@@ -25,11 +25,14 @@
      <height>505</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/newPrefix/Project-Parot-assets/Main-backgroumd.png);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../design/Project-Parot-assets/Main-backgroumd.png</pixmap>
+    <pixmap resource="../../Project-Parot/design/resource.qrc">:/newPrefix/Project-Parot-assets/Main-backgroumd.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -44,11 +47,14 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/newPrefix/Project-Parot-assets/Vector Smart Object-1.png);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../design/Project-Parot-assets/Vector Smart Object-1.png</pixmap>
+    <pixmap>../../Project-Parot/design/Project-Parot-assets/Vector Smart Object-1.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -63,11 +69,14 @@
      <height>29</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/newPrefix/Project-Parot-assets/Vector Smart Object.png);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../design/Project-Parot-assets/Vector Smart Object.png</pixmap>
+    <pixmap>../../Project-Parot/design/Project-Parot-assets/Vector Smart Object.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -86,7 +95,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../design/Project-Parot-assets/login-main-backgroun.png</pixmap>
+    <pixmap resource="../../Project-Parot/design/resource.qrc">:/newPrefix/Project-Parot-assets/login-main-backgroun.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -163,7 +172,7 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">border-image: url(:/newPrefix/Project-Parot-assets/Password-border.png);
-font: 13pt &quot;Cascadia Code ExtraLight&quot;;
+font: 13pt &quot;Cascadia Mono ExtraLight&quot;;
 color: rgb(255, 255, 255);</string>
    </property>
    <property name="echoMode">
@@ -265,11 +274,14 @@ font:  italic 5pt &quot;Cascadia Mono ExtraLight&quot;;</string>
      <height>5</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/newPrefix/Project-Parot-assets/Outline.png);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../design/resource.qrc">:/newPrefix/Project-Parot-assets/Outline.png</pixmap>
+    <pixmap resource="../../Project-Parot/design/resource.qrc">:/newPrefix/Project-Parot-assets/Outline.png</pixmap>
    </property>
   </widget>
   <widget class="QCommandLinkButton" name="Create_Acc">
@@ -317,7 +329,7 @@ color: rgb(178, 38, 38);</string>
   </widget>
  </widget>
  <resources>
-  <include location="../design/resource.qrc"/>
+  <include location="../../Project-Parot/design/resource.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'New_loginUi.ui'
+# Form implementation generated from reading ui file '.\New_LoginUi.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -15,33 +15,34 @@ class Ui_login_Form(object):
     def setupUi(self, login_Form):
         login_Form.setObjectName("login_Form")
         login_Form.resize(870, 509)
-        login_Form.setAutoFillBackground(False)
         login_Form.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-
         login_Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-
+        login_Form.setAutoFillBackground(False)
         self.Main_Background = QtWidgets.QLabel(login_Form)
         self.Main_Background.setGeometry(QtCore.QRect(-2, -1, 866, 505))
+        self.Main_Background.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/Main-backgroumd.png);")
         self.Main_Background.setText("")
-        self.Main_Background.setPixmap(QtGui.QPixmap("E:/Project-Parot/design/Project-Parot-assets/Main-backgroumd.png"))
+        self.Main_Background.setPixmap(QtGui.QPixmap(":/newPrefix/Project-Parot-assets/Main-backgroumd.png"))
         self.Main_Background.setScaledContents(True)
         self.Main_Background.setObjectName("Main_Background")
         self.Hello = QtWidgets.QLabel(login_Form)
         self.Hello.setGeometry(QtCore.QRect(592, 88, 110, 24))
+        self.Hello.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/Vector Smart Object-1.png);")
         self.Hello.setText("")
-        self.Hello.setPixmap(QtGui.QPixmap("E:/Project-Parot/design/Project-Parot-assets/Vector Smart Object-1.png"))
+        self.Hello.setPixmap(QtGui.QPixmap(".\\../../Project-Parot/design/Project-Parot-assets/Vector Smart Object-1.png"))
         self.Hello.setScaledContents(True)
         self.Hello.setObjectName("Hello")
         self.Welcome = QtWidgets.QLabel(login_Form)
         self.Welcome.setGeometry(QtCore.QRect(568, 123, 154, 29))
+        self.Welcome.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/Vector Smart Object.png);")
         self.Welcome.setText("")
-        self.Welcome.setPixmap(QtGui.QPixmap("E:/Project-Parot/design/Project-Parot-assets/Vector Smart Object.png"))
+        self.Welcome.setPixmap(QtGui.QPixmap(".\\../../Project-Parot/design/Project-Parot-assets/Vector Smart Object.png"))
         self.Welcome.setScaledContents(True)
         self.Welcome.setObjectName("Welcome")
         self.Login_Background = QtWidgets.QLabel(login_Form)
         self.Login_Background.setGeometry(QtCore.QRect(459, 177, 357, 217))
         self.Login_Background.setText("")
-        self.Login_Background.setPixmap(QtGui.QPixmap("E:/Project-Parot/design/Project-Parot-assets/login-main-backgroun.png"))
+        self.Login_Background.setPixmap(QtGui.QPixmap(":/newPrefix/Project-Parot-assets/login-main-backgroun.png"))
         self.Login_Background.setScaledContents(True)
         self.Login_Background.setObjectName("Login_Background")
         self.Username_text = QtWidgets.QLineEdit(login_Form)
@@ -58,7 +59,7 @@ class Ui_login_Form(object):
         self.Username_text.setStatusTip("")
         self.Username_text.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Username_text.setAutoFillBackground(False)
-        self.Username_text.setStyleSheet("border-image: url(E:/Project-Parot/design/Project-Parot-assets/userneme-border.png);\n"
+        self.Username_text.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/userneme-border.png);\n"
 "font: 13pt \"Cascadia Mono ExtraLight\";\n"
 "color: rgb(255, 255, 255);")
         self.Username_text.setInputMask("")
@@ -70,7 +71,7 @@ class Ui_login_Form(object):
         self.Username_text.setObjectName("Username_text")
         self.Password_text = QtWidgets.QLineEdit(login_Form)
         self.Password_text.setGeometry(QtCore.QRect(497, 264, 288, 30))
-        self.Password_text.setStyleSheet("border-image: url(E:/Project-Parot/design/Project-Parot-assets/Password-border.png);\n"
+        self.Password_text.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/Password-border.png);\n"
 "font: 13pt \"Cascadia Mono ExtraLight\";\n"
 "color: rgb(255, 255, 255);")
         self.Password_text.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -81,7 +82,7 @@ class Ui_login_Form(object):
         self.Login_Button = QtWidgets.QPushButton(login_Form)
         self.Login_Button.setGeometry(QtCore.QRect(565, 338, 153, 27))
         self.Login_Button.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.Login_Button.setStyleSheet("border-image: url(E:/Project-Parot/design/Project-Parot-assets/login-background.png);\n"
+        self.Login_Button.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/login-background.png);\n"
 "color: rgb(255, 255, 255);\n"
 "font: 11pt \"Cascadia Code SemiBold\";")
         self.Login_Button.setAutoDefault(False)
@@ -107,13 +108,14 @@ class Ui_login_Form(object):
         self.Forgot_Password.setObjectName("Forgot_Password")
         self.Outline = QtWidgets.QLabel(login_Form)
         self.Outline.setGeometry(QtCore.QRect(413, 167, 417, 5))
+        self.Outline.setStyleSheet("border-image: url(:/newPrefix/Project-Parot-assets/Outline.png);")
         self.Outline.setText("")
-        self.Outline.setPixmap(QtGui.QPixmap("E:/Project-Parot/design/Project-Parot-assets/Outline.png"))
+        self.Outline.setPixmap(QtGui.QPixmap(":/newPrefix/Project-Parot-assets/Outline.png"))
         self.Outline.setObjectName("Outline")
         self.Create_Acc = QtWidgets.QCommandLinkButton(login_Form)
-        self.Create_Acc.setGeometry(QtCore.QRect(540, 310, 211, 31))
+        self.Create_Acc.setGeometry(QtCore.QRect(560, 310, 171, 21))
         self.Create_Acc.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.Create_Acc.setStyleSheet("font: 8pt \"Cascadia Mono SemiLight\";\n"
+        self.Create_Acc.setStyleSheet("font: 6pt \"Cascadia Code\";\n"
 "color: rgb(255, 255, 255);")
         self.Create_Acc.setIconSize(QtCore.QSize(10, 10))
         self.Create_Acc.setObjectName("Create_Acc")
@@ -122,7 +124,7 @@ class Ui_login_Form(object):
         self.label.setStyleSheet("font: 8pt \"OCR-B 10 BT\";\n"
 "color: rgb(178, 38, 38);")
         self.label.setObjectName("label")
-        self.label.setObjectName("label")
+        self.label.hide()
 
         self.retranslateUi(login_Form)
         QtCore.QMetaObject.connectSlotsByName(login_Form)
@@ -135,8 +137,8 @@ class Ui_login_Form(object):
         self.Login_Button.setText(_translate("login_Form", "LOGIN"))
         self.Forgot_Password.setText(_translate("login_Form", "Forgot Password?"))
         self.Create_Acc.setText(_translate("login_Form", "To create account Click Here"))
-        # self.label.setText(_translate("login_Form", "Enter valid Email id or Password"))
-# import resource_rc
+        self.label.setText(_translate("login_Form", "Enter valid Email id or Password"))
+from Windows import resource_rc
 
 
 if __name__ == "__main__":

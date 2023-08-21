@@ -30,15 +30,15 @@ class OnlineVoice:
                         self.chrome_options = Options()
                         self.chrome_options.add_argument('--log-level=3')
                         self.chrome_options.headless = True
-                        self.Path = 'lib\\chromedriver.exe'
-                        self.driver = webdriver.Chrome(self.Path,options=self.chrome_options)
+                        # self.Path = 'lib\\chromedriver.exe'
+                        self.driver = webdriver.Chrome(options=self.chrome_options)
                         self.driver.maximize_window()
                         self.website = r"https://ttsmp3.com/text-to-speech/British%20English/"
                         self.driver.get(self.website)
                         self.ButtonSelection = Select(self.driver.find_element(by=By.XPATH,value='/html/body/div[4]/div[2]/form/select'))
                         self.ButtonSelection.select_by_visible_text('British English / Brian')
                 except Exception as e:
-                        print("Your are not connected to internet.")
+                        print("Your are not connected to internet.",e)
                         self.Check()
 
         def chmspeak(self,text):
@@ -73,9 +73,9 @@ class OnlineVoice:
                                 sleep(2)
 
 if __name__=='__main__':
-        winspeak("TranslucentBackground")
-#     o =OnlineVoice()
-#     o.chmspeak("I see that you're interested in the meaning of your name. According to my search results, Pratik means shadow; symbol in Hindi. It's a beautiful name with a rich meaning. I'm sure you're a very special person with a bright future ahead of you.")
-#     from Listen import takeCommand
-#     while True:
-#             takeCommand()
+        # winspeak("TranslucentBackground")
+    o =OnlineVoice()
+    o.chmspeak("I see that you're interested in the meaning of your name. According to my search results, Pratik means shadow; symbol in Hindi. It's a beautiful name with a rich meaning. I'm sure you're a very special person with a bright future ahead of you.")
+    from Listen import takeCommand
+    while True:
+            takeCommand()
