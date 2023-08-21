@@ -4,17 +4,18 @@ from PyQt5.QtCore import QThread
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QMovie
 import datetime
-import webbrowser
+import webbrowser as web
 import pyautogui
 import time
 import re
 import speech_recognition as sr
 from googletrans import Translator
 import wikipedia
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QVBoxLayout, QLineEdit, QLabel
 import keyboard as key
 
 
-
+from threading import *
 
 
 from Windows.iputy import Ui_Form
@@ -23,7 +24,8 @@ from lib.WhasApp import whatsapp
 from Windows.New_Start_ui import Ui_Start_ui
 from lib.Openbrow import open_url,search,search_engines,popular_websites
 from lib.Map import MyLocation,GoogleMap
-
+from lib.Mail import mail
+from Windows.Email_info import LoginDialog
 
 
 s = Speak.OnlineVoice()
@@ -213,6 +215,14 @@ class Mainexecution(QThread):
                  except:
                       speak("say that again.")
 
+# ----------------------------------------------------------send mail---------------->>>>>
+            elif "send mail" in self.query:
+                    send_email = mail('joananna9886@gmail.com', 'hhhhh','kkkkkk')
+                    debug = send_email.send()
+                    if debug == True:
+                         ui.take_mail_info()
+                         web.open('https://support.google.com/accounts/answer/185833?sjid=13241575861064544952-AP')
+                         
             elif "close window" in self.query:
                  speak("closing recently opened window")
                  key.press_and_release("Alt+F4")
@@ -230,11 +240,7 @@ class MainexecutionWindow(QMainWindow):
         # self.ui.ExitButton.clicked.connect(lambda y:sys.exit(app.exit()))
         # self.show()
         # take input through keyboard window
-        self.Form = QtWidgets.QWidget()
-        self.ui = Ui_Form()
-        self.ui.setupUi(self.Form)
-        self.ui.pushButton.clicked.connect(lambda x: self.keyboardcommad())
-        # self.Form.show()
+
         self.startexecution()
     def keyboardcommad(self):
          userinput = self.ui.lineEdit.text()
@@ -242,7 +248,14 @@ class MainexecutionWindow(QMainWindow):
     def cleartext(self):
         self.ui.lineEdit.clear()
          
-      
+    def take_mail_info(self):
+         t = Thread(target=self.take)
+         t.start()
+
+    def take(self):
+        dialog = LoginDialog()
+        if dialog.exec_() == QDialog.Accepted:
+            pass
     def StartFrom(self):
         self.startFrom = QtWidgets.QWidget()
         self.startui = Ui_Start_ui()
@@ -307,7 +320,6 @@ class MainexecutionWindow(QMainWindow):
              self.startui.label_5.show()
 
     def parrot(self,message):
-         
          self.startui.parrot_lable.setText(message)
     def user(self,message):
          self.startui.user_lable.setText(message)
