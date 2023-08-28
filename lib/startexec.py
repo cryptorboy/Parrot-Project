@@ -252,7 +252,7 @@ class Mainexecution(QThread):
                                     if email_id != None:
                                         send_email = mail(email_id, subject, mail_msg)
                                         debug = send_email.send()
-                                        speak("Please wait.")
+                                        speak("Please wait.   ")
                                         print(debug)
                                         # print(e)
                                         if debug == True:

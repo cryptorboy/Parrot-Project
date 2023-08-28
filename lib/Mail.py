@@ -4,6 +4,9 @@ from email.mime.text import MIMEText
 import MySQLdb
 import webbrowser as web
 import json
+import imaplib
+import email
+from email.header import decode_header
 
 class mail():
     def __init__(self,receiver_email, message, subject):
@@ -51,20 +54,44 @@ class mail():
         except Exception as e:
             print(e)
 
-        def SearchEmail():
+    def SearchEmail(self    ):
             db = MySQLdb.connect(host="localhost", user="pratik", password="pratik[21]",database='parotdata')
             cur = db.cursor()
             sql = f"select email,email_pass from users WHERE username = '{self.name}'"
             cur.execute(sql)
             data = cur.fetchone()
-            sender_email = data[0]
-            sender_password = data[1]
-            print(f"{sender_email},{sender_password}")
+            email_id = data[0]
+            id_password = data[1]
+            print(f"{email_id},{id_password}")
             db.commit()
             db.close()
 
+            imap_server = 'imap.gmail.com'
+            imap_port = 993
+            email_add = email_id
+            email_password = id_password
+
+            mail = imaplib.IMAP4_SSL(imap_server, imap_port)
+            mail.login(email_add, email_password)
+            mail.select('inbox')
+
+            # Search for emails
+            status, email_ids = mail.search(None, 'ALL')
+            email_ids = email_ids[0].split()
+
+            # Retrieve and print email content
+            for email_id in email_ids:
+                status, email_data = mail.fetch(email_id, '(RFC822)')
+                raw_email = email_data[0][1]
+                msg = email.message_from_bytes(raw_email)
+                
+                print('From:', msg['From'])
+                print('Subject:', decode_header(msg['Subject'])[0][0])  # Decode subject if needed
+                            
+                print('---')
 
 
 if __name__ == "__main__":
     send_email = mail('joananna9886@gmail.com', 'hsssssssss','kkkkkk')
-    print(send_email.send())
+    # print(send_email.send())
+    send_email.SearchEmail()
