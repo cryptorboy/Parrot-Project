@@ -124,7 +124,6 @@ class Ui_login_Form(object):
         self.label.setStyleSheet("font: 8pt \"OCR-B 10 BT\";\n"
 "color: rgb(178, 38, 38);")
         self.label.setObjectName("label")
-        self.label.hide()
 
         self.retranslateUi(login_Form)
         QtCore.QMetaObject.connectSlotsByName(login_Form)

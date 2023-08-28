@@ -125,9 +125,12 @@ class MainWindow(QMainWindow):
                 if username == row[0] or username == row[2]:
                     if password == row[1]:
                         self.logui.label.setText("Successfully Logged in")
+                        name = {
+                            "name":username,
+                        }
                         self.path = "lib/load.json"
                         with open(self.path,"w") as file:
-                            json.dump({},file)
+                            json.dump(name,file)
                         self.close()
                     else:
                         self.logui.label.setText("Invalid Password")

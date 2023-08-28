@@ -18,6 +18,7 @@ class ExecWindow(QMainWindow):
     def Parrot_Function(self):
         self.Parrot_ui = Run_Class()
         self.Parrot_ui.run()
+        
 
     def Login_Function(self):
         self.login_ui = MainWindow()
@@ -39,7 +40,7 @@ class ExecWindow(QMainWindow):
         msg_box.setWindowTitle('Loging Status.')
         msg_box.setText('Successfully loggedin. Say Parrot!')
         msg_box.setIcon(QMessageBox.Information)
-        msg_box.addButton('OK', QMessageBox.AcceptRole)
+        msg_box.addButton('OK', QMessageBox.AcceptRole) 
         result = msg_box.exec_()
 
 

@@ -11,9 +11,10 @@ import re
 import speech_recognition as sr
 from googletrans import Translator
 import wikipedia
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QVBoxLayout, QLineEdit, QLabel
 import keyboard as key
-
+import spacy
+import MySQLdb
+import json
 
 from threading import *
 
@@ -142,6 +143,17 @@ class Mainexecution(QThread):
                 sys.exit(app.exit())
                 break
 
+    def store(self,email,appPass):
+        with open('lib\load.json','r') as f:
+            data = json.load(f)
+            self.name = data['name']
+        db = MySQLdb.connect(host="localhost", user="pratik", password="pratik[21]",database='parotdata')
+        cur = db.cursor()
+        sql = f" UPDATE users SET email = '{email}', email_pass = '{appPass}' WHERE username = '{self.name}'"
+        a=cur.execute(sql)
+        db.commit()
+        db.close()
+
     def Boom(self):
         print("boom function")
         ui.showlabel("startlable")
@@ -218,15 +230,51 @@ class Mainexecution(QThread):
 # ----------------------------------------------------------send mail---------------->>>>>
             elif "send mail" in self.query:
                     while True:
-                        try:
-                            send_email = mail('joananna9886@gmail.com', 'hhhhh','kkkkkk')
-                            debug = send_email.send()
-                        except Exception as e:
-                            print(e)
-                        if debug == True:
-                            ui.take_mail_info()
-                            web.open('https://support.google.com/accounts/answer/185833?sjid=13241575861064544952-AP')
-                         
+                        speak("Tell me subject.")
+                        subject = takeCommand().lower()
+                        if "none" == subject:
+                             speak("say that again.")
+                        else:
+                            while True:
+                                speak("Tell me What mail you want send.")
+                                mail_msg = takeCommand().lower()
+                                if "none" == mail_msg:
+                                    speak("Say that again")
+                                else:
+                                    break
+                        
+                            speak("For whom you want to send.")
+                            ui.showlabel("mail_id")
+
+                            while True:              
+                                    email_id = ui.Mail_id()
+                                    print(type(email_id))
+                                    if email_id != None:
+                                        send_email = mail(email_id, subject, mail_msg)
+                                        debug = send_email.send()
+                                        speak("Please wait.")
+                                        print(debug)
+                                        # print(e)
+                                        if debug == True:
+                                            speak("Verify your account with 2 step verification")
+                                            web.open('https://support.google.com/accounts/answer/185833?sjid=13241575861064544952-AP')
+                                            speak("After you can send emails and accses emails. Thank you!")
+                                            ui.showlabel("mail_info")
+                                            while True:
+                                                email, appPass = ui.updatedata()
+                                                if email != None and appPass != None:
+                                                    debug = send_email.send()
+                                                    if debug == True:
+                                                        self.store(email,appPass)
+                                                    else:
+                                                        break
+                                        break
+                            speak(f"Mail has been sent successfully to {email_id}")
+                            break
+
+
+                            
+
             elif "close window" in self.query:
                  speak("closing recently opened window")
                  key.press_and_release("Alt+F4")
@@ -251,9 +299,28 @@ class MainexecutionWindow(QMainWindow):
          return userinput
     def cleartext(self):
         self.ui.lineEdit.clear()
-         
-    def take_mail_info(self):
-        pass
+        
+    def updatedata(self):
+        email = self.Mail_id()
+        appPass = self.startui.mail_pass.text()
+        print(email,appPass)
+        return email, appPass
+
+
+    def Mail_id(self):
+         mail_id = self.startui.mail_id.text()
+         nlp = spacy.blank("en")
+         doc = nlp(mail_id)
+         try:
+            id = doc[0]
+            if id.like_email:
+                print(type(id))
+                return mail_id+"om"
+         except Exception as e:
+              print(e)
+              self.Mail_id()
+              return None
+        
     def StartFrom(self):
         self.startFrom = QtWidgets.QWidget()
         self.startui = Ui_Start_ui()
@@ -262,7 +329,7 @@ class MainexecutionWindow(QMainWindow):
         self.startui.label_2.hide()
         self.startui.label_3.hide()
         self.startui.label_4.hide()
-        self.startui.pushButton.hide()
+        self.startui.closeButton.hide()
         self.startui.listening_lable1.hide()
         self.startui.listening_lable2.hide()
         self.startui.recognising_lable.hide()
@@ -270,6 +337,11 @@ class MainexecutionWindow(QMainWindow):
         self.startui.label_5.hide()
         self.startui.parrot_lable.hide()
         self.startui.user_lable.hide()
+        self.startui.mail_id.hide()
+        self.startui.mail_pass.hide()
+        self.startui.submitBtn.hide()
+        self.startui.user_lable_2.hide()
+        self.startui.user_lable_3.hide()
         self.startFrom.show()
         self.Start_animation()
 
@@ -294,7 +366,7 @@ class MainexecutionWindow(QMainWindow):
             self.startui.label_2.show()
             self.startui.label_3.show()
             self.startui.label_4.show()
-            self.startui.pushButton.show()
+            self.startui.closeButton.show()
             self.startui.listening_lable1.show()
             self.startui.listening_lable2.show()
             self.startui.parrot_lable.show()
@@ -316,10 +388,31 @@ class MainexecutionWindow(QMainWindow):
              self.startui.recognising_lable.show()
              self.startui.label_5.raise_()
              self.startui.label_5.show()
+        elif state == "mail_id":
+             self.startui.user_lable_2.show()
+             self.startui.mail_id.show()
+        elif state == "mail_info":
+             self.startui.mail_id.clear()
+             self.startui.user_lable_2.show()
+             self.startui.user_lable_3.show()
+             self.startui.user_lable_2.setText("Enter Email here.")
+             self.startui.mail_id.show()
+             self.startui.mail_pass.show()
+        elif state == 'close':
+             self.startui.mail_id.clear()
+             self.startui.user_lable_2.hide()
+             self.startui.user_lable_3.hide()
+             self.startui.mail_id.hide()
+             self.startui.mail_pass.hide()              
+
+
+
+          
+        
 
     def parrot(self,message):
          self.startui.parrot_lable.setText(message)
-    def user(self,message):
+    def user(self,message): 
          self.startui.user_lable.setText(message)
 
     def closelabel(self):
