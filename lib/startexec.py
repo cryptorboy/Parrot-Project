@@ -276,7 +276,7 @@ class Mainexecution(QThread):
                             ui.showlabel('close')
                             break
 
-#--------------------------------------------------Weather ----------->>>>>>>>>>
+#--------------------------------------------------Weather----------->>>>>>>>>>
 
             elif "weather" in self.query:
                 speak("Tel me city name")
@@ -290,6 +290,11 @@ class Mainexecution(QThread):
                     w = weather(city)
                     print(w)
                     speak(f"I am sorry, the city {city} is not found.")
+
+#--------------------------------------------------Show Time---------->>>>>>
+            elif "time" in self.query:
+                 strTime = datetime.datetime.now().strftime("%H:%M:%S")
+                 speak(f"The time is {strTime}")
 
             elif "close window" in self.query:
                  speak("closing recently opened window")
