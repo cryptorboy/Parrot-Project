@@ -4,7 +4,7 @@ import random
 def recive_otp(mob_num,num_otp):
     try:
         account_sid = 'ACbbcd58c2c530843e66b3ac0e83e177e5'
-        auth_token = '581a865bb5c1e2dbade490aff7d6a06d'
+        auth_token = '4fe31b4cab450ec619ad9566ea617896'
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(

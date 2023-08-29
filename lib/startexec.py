@@ -250,7 +250,8 @@ class Mainexecution(QThread):
                                     email_id = ui.Mail_id()
                                     print(type(email_id))
                                     if email_id != None:
-                                        send_email = mail(email_id, subject, mail_msg)
+                                        email = email_id+"om"
+                                        send_email = mail(email, subject, mail_msg)
                                         debug = send_email.send()
                                         speak("Please wait.   ")
                                         print(debug)
@@ -264,12 +265,14 @@ class Mainexecution(QThread):
                                                 email, appPass = ui.updatedata()
                                                 if email != None and appPass != None:
                                                     debug = send_email.send()
+                                                    print(debug)
                                                     if debug == True:
                                                         self.store(email,appPass)
                                                     else:
                                                         break
                                         break
-                            speak(f"Mail has been sent successfully to {email_id}")
+                            speak(f"Mail has been sent successfully to {email}")
+                            ui.showlabel('close')
                             break
 
 
@@ -315,7 +318,7 @@ class MainexecutionWindow(QMainWindow):
             id = doc[0]
             if id.like_email:
                 print(type(id))
-                return mail_id+"om"
+                return mail_id
          except Exception as e:
               print(e)
               self.Mail_id()
@@ -395,7 +398,6 @@ class MainexecutionWindow(QMainWindow):
              self.startui.mail_id.clear()
              self.startui.user_lable_2.show()
              self.startui.user_lable_3.show()
-             self.startui.user_lable_2.setText("Enter Email here.")
              self.startui.mail_id.show()
              self.startui.mail_pass.show()
         elif state == 'close':

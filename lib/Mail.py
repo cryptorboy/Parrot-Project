@@ -49,12 +49,11 @@ class mail():
             url = "https://mail.google.com/mail/u/0/#sent"
             web.open(url)
         except smtplib.SMTPResponseException:
-            print(e)
             return True
         except Exception as e:
             print(e)
 
-    def SearchEmail(self    ):
+    def SearchEmail(self):
             db = MySQLdb.connect(host="localhost", user="pratik", password="pratik[21]",database='parotdata')
             cur = db.cursor()
             sql = f"select email,email_pass from users WHERE username = '{self.name}'"
