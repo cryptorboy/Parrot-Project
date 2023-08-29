@@ -3,6 +3,7 @@ import requests
 import json
 
 def weather(city):
+    try:
         # Enter your API key here
         api_key = "d25246b5dcca46dda419a70cc41f9bfe"
 
@@ -76,6 +77,14 @@ def weather(city):
 
         else:
             print(" City Not Found ")
+            return True
+    except:
+        return True
 
 if __name__ == "__main__":
-    print(weather("belagavi"))
+    # print(weather("belagavi"))
+    try:
+        temp, press, humi, desc = weather("beagavi")
+    except:
+        w = weather("beagavi")
+        print(w)

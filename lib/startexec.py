@@ -26,6 +26,7 @@ from Windows.New_Start_ui import Ui_Start_ui
 from lib.Openbrow import open_url,search,search_engines,popular_websites
 from lib.Map import MyLocation,GoogleMap
 from lib.Mail import mail
+from lib.Weather import weather
 
 
 
@@ -275,8 +276,20 @@ class Mainexecution(QThread):
                             ui.showlabel('close')
                             break
 
+#--------------------------------------------------Weather ----------->>>>>>>>>>
 
-                            
+            elif "weather" in self.query:
+                speak("Tel me city name")
+                city = takeCommand().lower()
+                try:
+                    speak("please wait for weather")
+                    temp, press, humi, desc = weather(city)
+
+                except Exception as e:
+                    print(e)
+                    w = weather(city)
+                    print(w)
+                    speak(f"I am sorry, the city {city} is not found.")
 
             elif "close window" in self.query:
                  speak("closing recently opened window")
