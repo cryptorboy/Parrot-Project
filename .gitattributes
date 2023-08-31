@@ -1,1 +1,4 @@
 Windows/resource_rc.py filter=lfs diff=lfs merge=lfs -text
+*.exe filter=lfs diff=lfs merge=lfs -text
+build filter=lfs diff=lfs merge=lfs -text
+dist/Parrot.exe filter=lfs diff=lfs merge=lfs -text
