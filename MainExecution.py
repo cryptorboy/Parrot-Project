@@ -9,6 +9,15 @@ import os
 from lib.login import MainWindow
 from lib.startexec import Run_Class
 # from Windows import Message
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 class ExecWindow(QMainWindow):
@@ -26,7 +35,7 @@ class ExecWindow(QMainWindow):
         app.exec_()
 
     def startexec_function(self):
-        path = "lib/load.json"
+        path = resource_path("lib/load.json")
         if os.path.exists(path):
             self.Parrot_Function()
         else:

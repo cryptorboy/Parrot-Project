@@ -6,15 +6,26 @@ import webbrowser as web
 import json
 import imaplib
 import email
+import os 
+import sys
 from email.header import decode_header
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 class mail():
     def __init__(self,receiver_email, message, subject):
         super(mail,self).__init__()
         self.receiver_email = receiver_email
         self.message = message
         self.subject = subject
-        with open ('lib\load.json','r') as f:
+        with open (resource_path('lib\load.json'),'r') as f:
             data = json.load(f)
             self.name = data['name']
     def send(self):

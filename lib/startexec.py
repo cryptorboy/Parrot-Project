@@ -15,6 +15,8 @@ import keyboard as key
 import spacy
 import MySQLdb
 import json
+import os 
+import sys
 
 from threading import *
 
@@ -28,7 +30,15 @@ from lib.Map import MyLocation,GoogleMap
 from lib.Mail import mail
 from lib.Weather import weather
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
 
+    return os.path.join(base_path, relative_path)
 
 s = Speak.OnlineVoice()
 def speak(text):
@@ -145,7 +155,7 @@ class Mainexecution(QThread):
                 break
 
     def store(self,email,appPass):
-        with open('lib\load.json','r') as f:
+        with open(resource_path('lib\\load.json'),'r') as f:
             data = json.load(f)
             self.name = data['name']
         db = MySQLdb.connect(host="localhost", user="pratik", password="pratik[21]",database='parotdata')
