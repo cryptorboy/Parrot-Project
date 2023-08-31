@@ -25,7 +25,7 @@ class mail():
         self.receiver_email = receiver_email
         self.message = message
         self.subject = subject
-        with open (resource_path('lib\load.json'),'r') as f:
+        with open (resource_path('lib\\load.json'),'r') as f:
             data = json.load(f)
             self.name = data['name']
     def send(self):

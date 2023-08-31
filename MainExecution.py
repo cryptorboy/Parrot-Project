@@ -35,12 +35,13 @@ class ExecWindow(QMainWindow):
         app.exec_()
 
     def startexec_function(self):
-        path = resource_path("lib/load.json")
-        if os.path.exists(path):
+        path = "lib\load.json"
+        print(resource_path(path))
+        if os.path.exists(resource_path(path)):
             self.Parrot_Function()
         else:
             self.Login_Function()
-            if os.path.exists(path):
+            if os.path.exists(resource_path(path)):
                 self.show_popup()
                 self.Parrot_Function()
 
